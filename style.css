@@ -10,17 +10,11 @@ body{
 }
 .calculator{
     position: relative;
-    height: 100vh;
-    width: 100vw;
-    background: #e0e0e0;
-    
+    min-height: 100vh;
+    background: #e0e0e0; 
 }
-
-
-
 .container{
     display: grid;
-    width: fit-content;
     justify-content: center;
     align-content: center;
     position: absolute;
@@ -29,14 +23,50 @@ body{
     transform: translate(-50%,-50%);
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto)repeat(5,100px);
-    background-color: #000;
-
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    background: rgba(0,0,0,0.2);
+    box-shadow: 20px 20px 60px #bebebe
+                -20px -20px 60px rgb(164, 55, 55);
 }
-
 .container .span{
     grid-column: span 2;
 }
-
 .output-screen{
     grid-column: 1/5;
+    background: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-top-right-radius: 30px;
+}
+.current{
+    font-size: 2.2rem;
+}
+.previous{
+    font-size: 1.6rem;
+}
+.container button{
+    font-size: 1.6rem;
+    background: none;
+    border: 1px solid white;
+    transition:  all .3s ease;
+   
+}
+.conatiner button :hover{
+    background: rgba(0,0,0,0.4);
+    border-radius: 15px;
+    border: none;
+    outline: none;
+}
+.container.equal{
+    border-bottom-right-radius: 30px;
+}
+.container.operation{
+    font-size: 1rem;
 }
